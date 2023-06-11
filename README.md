@@ -1,7 +1,12 @@
-```
+
 # Projeto de Data Science usando a API do Spotify
 
 Este projeto utiliza a API do Spotify para obter informações sobre usuários, principais faixas e principais artistas. Os dados são então armazenados em um banco de dados e processados para criar visualizações interativas usando o Streamlit.
+
+<p align="center">
+  <img src="images/front.png" alt="Frontend">
+</p>
+
 
 ## Configuração do ambiente
 
@@ -54,9 +59,4 @@ Este projeto é licenciado sob a [MIT License](https://opensource.org/licenses/M
 
 ## Imagem do Frontend
 ```
-
-<p align="center">
-  <img src="images/front.png" alt="Frontend">
-</p>
-
 
