@@ -12,7 +12,7 @@ Este projeto utiliza a API do Spotify para obter informações sobre usuários, 
 
 Antes de executar o projeto, certifique-se de ter as seguintes dependências instaladas:
 
-- Python 3.x
+- Python 3.10
 - Pacotes Python: spotipy, pandas, streamlit, entre outros. (instale as dependências usando `pip install -r requirements.txt`)
 
 Além disso, você precisará criar um aplicativo no [Spotify for Developers](https://developer.spotify.com/dashboard/) e obter as credenciais (CLIENT_ID e CLIENT_SECRET) necessárias para se autenticar na API do Spotify.
@@ -56,7 +56,3 @@ A estrutura de diretórios do projeto é a seguinte:
 ## Licença
 
 Este projeto é licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
-
-## Imagem do Frontend
-```
-
