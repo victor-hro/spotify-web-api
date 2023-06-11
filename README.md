@@ -54,6 +54,6 @@ Este projeto é licenciado sob a [MIT License](https://opensource.org/licenses/M
 
 ## Imagem do Frontend
 
-![Frontend](images/front.png)
+![Frontend](./images/front.png)
 
 ```
