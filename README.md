@@ -53,10 +53,10 @@ A estrutura de diretórios do projeto é a seguinte:
 Este projeto é licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
 
 ## Imagem do Frontend
+```
 
 <p align="center">
   <img src="images/front.png" alt="Frontend">
 </p>
 
 
-```
