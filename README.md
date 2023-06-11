@@ -52,8 +52,8 @@ A estrutura de diretórios do projeto é a seguinte:
 
 Este projeto é licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
 
+## Imagem do Frontend
+
+![Frontend](images/front.png)
+
 ```
-
-Lembre-se de personalizar as seções do README de acordo com as características do seu projeto e adicionar qualquer outra informação relevante.
-
-Espero que isso ajude! Se você tiver mais perguntas, não hesite em perguntar.
