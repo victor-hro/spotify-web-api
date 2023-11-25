@@ -7,6 +7,11 @@ Este projeto utiliza a API do Spotify para obter informações sobre usuários, 
   <img src="images/front.png" alt="Frontend">
 </p>
 
+<p align="center">
+  <img src="images/artists.png" alt="Frontend">
+</p>
+
+[Link para acesso ao projeto](https://spotify-web-api-victoroliveira.streamlit.app/)
 
 ## Configuração do ambiente
 
