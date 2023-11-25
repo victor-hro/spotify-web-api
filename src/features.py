@@ -58,3 +58,9 @@ database.insert(dataframe=top_10_tracks, schema='feature_store', table='top_10_t
 database.insert(dataframe=top_10_artists, schema='feature_store', table='top_10_artists', if_exists='replace')
 database.insert(dataframe=top_10_artists_info, schema='feature_store', table='top_10_artists_info', if_exists='replace')
 database.insert(dataframe=user_info, schema='feature_store', table='user_info', if_exists='replace')
+
+# Load data - streamlit app
+top_10_tracks.to_csv(r'./data/top_10_tracks.csv', index=None)
+top_10_artists.to_csv(r'./data/top_10_artists.csv', index=None)
+top_10_artists_info.to_csv(r'./data/top_10_artists_info.csv', index=None)
+user_info.to_csv(r'./data/user_info.csv', index=None)

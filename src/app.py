@@ -14,20 +14,96 @@ database.connect_db()
 env = find_dotenv()
 load_dotenv(env)
 
+from pathlib import Path
+import os
 
-# Functions to retrieve data from the database
-def get_tracks():
-    return database.run_query("SELECT * FROM feature_store.top_10_tracks")
+import pandas as pd
 
-def get_artists():
-    return database.run_query("SELECT * FROM feature_store.top_10_artists")
 
-def get_user_info():
-    return database.run_query("SELECT * FROM feature_store.user_info")
 
-def get_artists_info():
-    return database.run_query("select * from feature_store.top_10_artists_info")
+# Functions to retrieve data from the database or CSV file based on db_access parameter
+def get_tracks(db_access=False):
+    """
+    Retrieve top 10 tracks data either from a database or a CSV file.
 
+    Args:
+        db_access (bool): Indicates whether database access is available.
+
+    Returns:
+        pandas.DataFrame: DataFrame containing top 10 tracks data.
+    """
+    if db_access:
+        # Replace this with actual database query
+        return database.run_query("SELECT * FROM feature_store.top_10_tracks")
+    else:
+        # Encontrar o diretório raiz do projeto
+        data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+        file_path = os.path.join(data_dir, 'top_10_tracks.csv')
+        
+        return pd.read_csv(file_path)
+
+def get_artists(db_access=False):
+    """
+    Retrieve top 10 artists data from the database.
+
+    Args:
+        db_access (bool): Indicates whether database access is available.
+
+    Returns:
+        pandas.DataFrame: DataFrame containing top 10 artists data.
+    """
+    if db_access:
+        # Replace this with actual database query
+        return database.run_query("SELECT * FROM feature_store.top_10_artists")
+    else:
+        # Encontrar o diretório raiz do projeto
+        data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+        file_path = os.path.join(data_dir, 'top_10_artists.csv')
+        
+        return pd.read_csv(file_path)
+    
+def get_user_info(db_access=False):
+    """
+    Retrieve user info from the database.
+
+    Args:
+        db_access (bool): Indicates whether database access is available.
+
+    Returns:
+        pandas.DataFrame: DataFrame containing user info.
+    """
+    if db_access:
+        # Replace this with actual database query
+        return database.run_query("SELECT * FROM feature_store.user_info")
+    else:
+        # Encontrar o diretório raiz do projeto
+        data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+        file_path = os.path.join(data_dir, 'user_info.csv')
+        
+        return pd.read_csv(file_path)
+
+def get_artists_info(db_access=False):
+    """
+    Retrieve top 10 artists' additional information from the database.
+
+    Args:
+        db_access (bool): Indicates whether database access is available.
+
+    Returns:
+        pandas.DataFrame: DataFrame containing additional info for top 10 artists.
+    """
+    if db_access:
+        # Replace this with actual database query
+        return database.run_query("SELECT * FROM feature_store.top_10_artists_info")
+    else:
+        # Encontrar o diretório raiz do projeto
+        data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+        file_path = os.path.join(data_dir, 'top_10_artists_info.csv')
+        
+        return pd.read_csv(file_path)
+
+# Streamlit interface setup
+st.set_page_config(layout="wide")
 
 # Retrieve data
 tracks = get_tracks()
@@ -42,8 +118,9 @@ genre_counts = Counter([genre for genres in genres_list for genre in genres])
 result = pd.DataFrame.from_dict(genre_counts, orient='index', columns=['FREQ'])
 top_5_genres = result.sort_values('FREQ', ascending=False)
 
-# Streamlit interface setup
-st.set_page_config(layout="wide")
+
+
+
 
 # Display user info and image
 # spotify_icon = Image.open('../images/logo.png')
