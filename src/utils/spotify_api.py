@@ -79,3 +79,21 @@ class SpotifyAPI:
             artists_data.append(artist_data)
 
         return pd.DataFrame(artists_data)
+    
+
+    def get_artist_info(self, artist_name):
+        resultados = self.spotify_api.search(q='artist:' + artist_name, type='artist')
+
+        if len(resultados['artists']['items']) > 0:
+            artista = resultados['artists']['items'][0]
+            artist_info = {
+                'NAME': artista['name'],
+                'GENRES': ', '.join(artista['genres']),
+                'IMAGE': artista['images'],
+                'POPULARITY': artista['popularity'],
+                'LINK SPOTIFY': artista['external_urls']['spotify'],
+                'FOLLOWERS': artista['followers']['total']
+            }
+            return pd.DataFrame([artist_info])
+        else:
+            return pd.DataFrame(columns=['Nome', 'Gêneros', 'Imagens', 'Popularidade', 'Link Spotify', 'Total de Seguidores'])
