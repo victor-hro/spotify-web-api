@@ -1,0 +1,7 @@
+*__pycache__*
+*pycache*
+*.cache*
+*.env*
+
+# AWS
+*.pem*
